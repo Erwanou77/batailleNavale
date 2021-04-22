@@ -25,7 +25,9 @@ public class Player {
 	}
 	
 	private boolean hasShip(int c, int l) {
-		return false;
+		if(playerGrid.getValue(c, l)==1){
+			return true;
+		}else return false;
 	}
 	
 	public void initGridRandom() {
