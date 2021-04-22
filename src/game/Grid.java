@@ -18,7 +18,7 @@ public class Grid {
 	}
 	
 	public int getValue(int column, int line) {
-		return 0;
+		return mat[column][line];
 	}
 	
 	public void addShot(int column, int line, boolean success) {
