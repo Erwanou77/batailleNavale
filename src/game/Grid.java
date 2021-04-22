@@ -11,6 +11,13 @@ public class Grid {
 		initMat();
 	}
 	private void initMat() {
+		for(int i=0;i<GRID_SIZE;i++)
+		{
+			for(int j=0;j<GRID_SIZE;j++)
+			{
+				mat[i][j]=0;
+			}
+		}
 	}
 	
 	public void randomInit() {
@@ -18,7 +25,7 @@ public class Grid {
 	}
 	
 	public int getValue(int column, int line) {
-		return 0;
+		return mat[column][line];
 	}
 	
 	public void addShot(int column, int line, boolean success) {
@@ -36,7 +43,17 @@ public class Grid {
 	}
 	
 	public String toString(){
-		String str="";
+		String str="      A  B  C  D  E  F  G  H  I  J\n    -------------------------------\n";
+		for(int i=0;i<GRID_SIZE;i++)
+		{
+			str += i +"  |";
+			for(int j=0;j<GRID_SIZE;j++)
+			{
+				str+="  "+mat[i][j];
+			}
+			str += " |\n";
+		}
+		 str += "    -------------------------------\n";
 		return str;
 	}
 }
