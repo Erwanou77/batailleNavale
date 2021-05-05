@@ -69,7 +69,28 @@ public class Grid {
 	}
 	
 	private boolean isValidShip(Coordinates coord, int size, int dir) {
-        return true;
+        if(dir==0)
+		{
+			if((GRID_SIZE-size)>=l)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			if((GRID_SIZE-size)>=c)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 	
 	public String toString(){
