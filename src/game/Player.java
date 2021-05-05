@@ -25,6 +25,7 @@ public class Player {
 	}
 	
 	public void initGridRandom() {
+		playerGrid.randomInit();
 	}
 	
 	public void displayGrid() {
