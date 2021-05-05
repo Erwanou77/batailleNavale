@@ -30,7 +30,13 @@ public class Player {
 	}
 	
 	private boolean hasShip(int c, int l) {
-		return false;
+		if(playerGrid.getValue(c, l)==1)
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
 	}
 	
 	public void initGridRandom() {
@@ -45,7 +51,25 @@ public class Player {
 	}
 	
 	public boolean hasWin(){
+		int nb = 0;
+		for(int i=0;i<Grid.getGRIDSIZE();i++)
+		{
+			for(int j=0;j<Grid.getGRIDSIZE();j++)
+			{
+				if(shotGrid.getValue(i, j)==1)
+				{
+					nb++;
+				}
+			}
+		}
+		if(nb==18)
+		{
+			return true;
+		}
+		else
+		{
 		return false;
+		}
 	}
 	
 	public String getName() {
