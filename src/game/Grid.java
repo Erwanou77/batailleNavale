@@ -40,10 +40,32 @@ public class Grid {
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
-		return true;
+		if(isValidShip(column, line, s, d))
+		{
+			placeShip(column, line, s, d);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	private void placeShip (Coordinates coord, int size, int dir) {
+		if(dir==0)
+		{
+			for(int i=l;i<size;i++)
+			{
+				mat[i][c]=1;
+			}
+		}
+		else
+		{
+			for(int i=c;i<size;i++)
+			{
+				mat[l][i]=1;
+			}
+		}
 	}
 	
 	private boolean isValidShip(Coordinates coord, int size, int dir) {
