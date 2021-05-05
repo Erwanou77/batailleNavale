@@ -17,7 +17,16 @@ public class Player {
 	}
 	
 	public boolean recordShot(int column, int line, Player p) {
-		return false;
+		boolean touche=false;
+		if(shotGrid.getValue(column, line)==0)
+		{
+			if(p.hasShip(column, line))
+			{
+				touche=true;
+			}
+			shotGrid.addShot(column, line, touche);
+		}
+		return touche;
 	}
 	
 	private boolean hasShip(int c, int l) {
