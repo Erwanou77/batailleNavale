@@ -39,4 +39,9 @@ public class Grid {
 		String str="";
 		return str;
 	}
+	
+	public static int getGRIDSIZE()
+	{
+		return GRID_SIZE;
+	}
 }
