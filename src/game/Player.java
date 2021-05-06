@@ -34,10 +34,10 @@ public class Player {
 	}
 	
 	public void displayGrid() {
-		System.out.println(playerGrid);
+		playerGrid.toString();
 	}
 	public void displayShotGrid() {
-		System.out.println(shotGrid);
+		shotGrid.toString();
 	}
 	
 	public boolean hasWin(){
