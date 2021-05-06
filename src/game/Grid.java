@@ -33,17 +33,32 @@ public class Grid {
 		}
 	}
 	private void placeShip (int c,int l, int size, int dir) {
-		if(dir==0){
+		if(dir==0)
+		{
 			for(int i=l;i<l+size;i++){
-				mat[i][c]=1;
+				if(mat[i][c]!=1) {
+					mat[i][c]=1;
+				}else {
+					System.out.println("Il y a déja un bâteau");
+				}
 			}
 		}
-		else
-		{
-			for(int i=c;i<c+size;i++)
-			{
-				mat[l][i]=1;
+		else{
+			for(int i=c;i<c+size;i++){
+				if(mat[l][i]!=1) {
+					mat[l][i]=1;
+				}else {
+					System.out.println("Il y a déja un bâteau");
+				}
 			}
+		}
+	}
+	
+	private boolean isValidShip(int c, int l, int size, int dir) {
+		if((c >=0 && c<=9) && (l>=0 && l<=9) && (size<6 && size>0) && (dir==1 && dir==0)){
+			return true;
+		}else {
+			return false;
 		}
 	}
 	
