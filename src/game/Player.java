@@ -13,7 +13,14 @@ public class Player {
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
-		return playerGrid.addNewShip(column, line, s, d);
+		if((column>=0 && column<=9) &&(line>=0 && line<=9) && (s<=5 && s>0) &&( d==1 || d==0))
+		{
+			return playerGrid.addNewShip(column, line, s ,d);
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	public boolean recordShot(int column, int line, Player p) {
