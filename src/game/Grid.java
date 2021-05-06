@@ -33,10 +33,8 @@ public class Grid {
 		}
 	}
 	private void placeShip (int c,int l, int size, int dir) {
-		if(dir==0)
-		{
-			for(int i=l;i<l+size;i++)
-			{
+		if(dir==0){
+			for(int i=l;i<l+size;i++){
 				mat[i][c]=1;
 			}
 		}
