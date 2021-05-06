@@ -107,4 +107,9 @@ public class Grid {
 		 str += "------------------------------\n";
 		return str;
 	}
+	
+	public static int getGRIDSIZE()
+	{
+		return GRID_SIZE;
+	}
 }
