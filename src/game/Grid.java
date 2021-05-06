@@ -11,6 +11,13 @@ public class Grid {
 		initMat();
 	}
 	private void initMat() {
+		for(int i=0;i<GRID_SIZE;i++)
+		{
+			for(int j=0;j<GRID_SIZE;j++)
+			{
+				mat[i][j]=0;
+			}
+		}
 	}
 	
 	public void randomInit() {
