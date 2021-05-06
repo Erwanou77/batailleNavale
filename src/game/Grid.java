@@ -14,7 +14,25 @@ public class Grid {
 	}
 	
 	public void randomInit() {
-
+		int l = (int) Math.random()*10;
+		int c = (int) Math.random()*10;
+		int dir = (int) Math.random()*2;
+		int s = 5;
+		int i;
+		for(i=0;i<7;i++) {
+			if(isValidShip(c,l,s,dir)==true) {
+				addNewShip(c,l,s,dir);
+				s--;
+				if(s==2){
+					addNewShip(c,l,s,dir);
+					i++;
+				}
+				if(s==1){
+					addNewShip(c,l,s,dir);
+					i++;
+				}
+			}
+		}
 	}
 	
 	public int getValue(int column, int line) {
@@ -22,6 +40,11 @@ public class Grid {
 	}
 	
 	public void addShot(int column, int line, boolean success) {
+		if(success==true) {
+			mat[column][line] = 1;
+		}else {
+			mat[column][line] = 4;
+		}
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
