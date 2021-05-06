@@ -94,7 +94,7 @@ public class Grid {
 	}
 	
 	public String toString(){
-		String str="   A  B  C  D  E  F  G  H  I  J\n ------------------------------\n";
+		String str="      A  B  C  D  E  F  G  H  I  J\n    -------------------------------\n";
 		for(int i=0;i<GRID_SIZE;i++)
 		{
 			str += i +"  |";
@@ -102,9 +102,9 @@ public class Grid {
 			{
 				str+="  "+mat[i][j];
 			}
-			str += " |";
+			str += " |\n";
 		}
-		 str += "------------------------------\n";
+		 str += "    -------------------------------\n";
 		return str;
 	}
 	
