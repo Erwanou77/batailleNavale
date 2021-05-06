@@ -25,14 +25,28 @@ public class Grid {
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
-		return true;
+		if(isValidShip(column,line,s,d)==true) {
+			placeShip(column, line, s,d);
+			return true;
+		}else {
+			return false;
+		}
 	}
-	
-	private void placeShip (Coordinates coord, int size, int dir) {
-	}
-	
-	private boolean isValidShip(Coordinates coord, int size, int dir) {
-        return true;
+	private void placeShip (int c,int l, int size, int dir) {
+		if(dir==0)
+		{
+			for(int i=l;i<l+size;i++)
+			{
+				mat[i][c]=1;
+			}
+		}
+		else
+		{
+			for(int i=c;i<c+size;i++)
+			{
+				mat[l][i]=1;
+			}
+		}
 	}
 	
 	public String toString(){
