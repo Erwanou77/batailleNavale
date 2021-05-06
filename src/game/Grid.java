@@ -11,6 +11,11 @@ public class Grid {
 		initMat();
 	}
 	private void initMat() {
+		for(int i=0;i<GRID_SIZE;i++){
+			for(int j=0;j<GRID_SIZE;j++){
+				mat[i][j]=0;
+			}
+		}
 	}
 	
 	public void randomInit() {
@@ -78,15 +83,28 @@ public class Grid {
 	}
 	
 	private boolean isValidShip(int c, int l, int size, int dir) {
-		if((c >=0 && c<=9) && (l>=0 && l<=9) && (size<6 && size>0) && (dir==1 && dir==0)){
+		if((c>=0 && c<=9) && (l>=0 && l<=9) && (size<6 && size>0) && (dir==1 && dir==0) && (mat[c][l]!=1)){
 			return true;
 		}else {
 			return false;
 		}
 	}
-	
 	public String toString(){
-		String str="";
+		String str="      A  B  C  D  E  F  G  H  I  J\n    -------------------------------\n";
+		for(int i=0;i<GRID_SIZE;i++){
+			str += i +"  |";
+			for(int j=0;j<GRID_SIZE;j++)
+			{
+				str+="  "+mat[i][j];
+			}
+			str += " |\n";
+		}
+		 str += "    -------------------------------\n";
 		return str;
 	}
+	public static int getGRIDSIZE()
+	{
+		return GRID_SIZE;
+	}
 }
+
